@@ -10,5 +10,5 @@ it('renders without crashing', () => {
 
 it('has a Router component', () => {
   const wrapper = shallow(<App />);
-  expect(wrapper.find('Router')).toHaveLength(1);
+  expect(wrapper.find('BrowserRouter')).toHaveLength(1);
 });
