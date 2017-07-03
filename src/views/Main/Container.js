@@ -9,6 +9,8 @@ export class Container extends React.Component {
       <div>
         <Header />
         Hello from the container
+        <Map
+          google={this.props.google} />
       </div>
     )
   }
