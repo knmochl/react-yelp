@@ -1,4 +1,5 @@
 import React from 'react'
+import Map, { GoogleApiWrapper } from 'google-maps-react'
 
 import Header from '../../components/Header/Header'
 
@@ -13,4 +14,6 @@ export class Container extends React.Component {
   }
 }
 
-export default Container
+export default GoogleApiWrapper({
+  apiKey: process.env.REACT_APP_GAPI_KEY
+})(Container)
