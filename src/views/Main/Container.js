@@ -5,6 +5,15 @@ import { searchNearby } from '../../utils/googleApiHelpers'
 import Header from '../../components/Header/Header'
 
 export class Container extends React.Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      places: [],
+      pagination: null
+    }
+  }
+
   onReady(mapProps, map) {
     const {google} = this.props
     const opts = {
