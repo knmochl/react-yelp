@@ -23,7 +23,10 @@ export class Container extends React.Component {
     }
     searchNearby(google, map, opts)
       .then((results, pagination) => {
-        // We got some results and a pagination object
+        this.setState({
+          places: results,
+          pagination
+        })
       }).catch((status, result) => {
         // There was an error
       })
