@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "font-awesome": "^4.7.0",
+    "google-maps-react": "^1.0.19",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-router": "^4.1.1",
