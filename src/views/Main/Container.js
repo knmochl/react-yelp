@@ -1,8 +1,26 @@
 import React from 'react'
 import Map, { GoogleApiWrapper } from 'google-maps-react'
+import styled from 'styled-components'
 
 import { searchNearby } from '../../utils/googleApiHelpers'
 import Header from '../../components/Header/Header'
+
+const MapWrapper = styled(Map)`
+  overflow-y: scroll;
+  display: flex;
+  margin: 0;
+  padding: 15px;
+
+  height: 100vh;
+  -webkit-box-orient: horizontal;
+  -o-box-orient: horizontal;
+`
+
+const Content = styled.div`
+  position: relative;
+  flex: 2;
+  top: 80px;
+`
 
 export class Container extends React.Component {
   constructor(props) {
@@ -37,16 +55,18 @@ export class Container extends React.Component {
       <div>
         <Header />
         Hello from the container
-        <Map
+        <MapWrapper
           onReady={this.onReady.bind(this)}
           google={this.props.google}
           visible={false}>
 
-          {this.state.places.map(place => {
-            return (<div key={place.id}>{place.name}</div>)
-          })}
+          <Content>
+            {this.state.places.map(place => {
+              return (<div key={place.id}>{place.name}</div>)
+            })}
+          </Content>
 
-        </Map>
+        </MapWrapper>
       </div>
     )
   }
