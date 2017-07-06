@@ -4,6 +4,7 @@ import styled from 'styled-components'
 
 import { searchNearby } from '../../utils/googleApiHelpers'
 import Header from '../../components/Header/Header'
+import Sidebar from '../../components/Sidebar/Sidebar'
 
 const MapWrapper = styled(Map)`
   overflow-y: scroll;
@@ -53,12 +54,15 @@ export class Container extends React.Component {
   render() {
     return (
       <div>
-        <Header />
-        Hello from the container
         <MapWrapper
           onReady={this.onReady.bind(this)}
           google={this.props.google}
           visible={false}>
+          <Header />
+          <Sidebar
+            title={'Restaurants'}
+            places={this.state.places}
+            />
 
           <Content>
             {this.state.places.map(place => {
