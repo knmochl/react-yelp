@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
+import cssVars from '../../lib/css-constants'
+
 const Topbar = styled.div`
   position: fixed;
   z-index: 10;
@@ -10,8 +12,8 @@ const Topbar = styled.div`
   background: #48b5e9;
   width: 100%;
   padding: 0 25px;
-  height: 80px;
-  line-height: 80px;
+  height: ${cssVars.topbar.height};
+  line-height: ${cssVars.topbar.height};
   color: #fff;
 
   a {

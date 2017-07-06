@@ -2,6 +2,7 @@ import React from 'react'
 import Map, { GoogleApiWrapper } from 'google-maps-react'
 import styled from 'styled-components'
 
+import cssVars from '../../lib/css-constants'
 import { searchNearby } from '../../utils/googleApiHelpers'
 import Header from '../../components/Header/Header'
 import Sidebar from '../../components/Sidebar/Sidebar'
@@ -20,7 +21,7 @@ const MapWrapper = styled(Map)`
 const Content = styled.div`
   position: relative;
   flex: 2;
-  top: 80px;
+  top: ${cssVars.topbar.height};
 `
 
 export class Container extends React.Component {

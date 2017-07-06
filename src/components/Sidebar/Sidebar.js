@@ -1,9 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import cssVars from '../../lib/css-constants'
+
 const SidebarWrapper = styled.div`
   height: 100%;
-  top: 80px;
+  top: ${cssVars.topbar.height};
   left: 0;
   overflow: hidden;
 
