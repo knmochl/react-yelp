@@ -15,6 +15,7 @@ describe('<Listing />', () => {
     wrapper = shallow(<Listing places={places} />)
   })
 
-  it('wraps the component in a listing css class')
-  it('has an item for each place in the places prop')
+  it('has an item for each place in the places prop', () => {
+    expect(wrapper.find('Item').length).toEqual(places.length)
+  })
 })
