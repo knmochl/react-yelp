@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Item from './Item'
+import Item from '../Item/Item'
 
 const StyledListing = styled.div`
   height: 100%;

@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import cssVars from '../../lib/css-constants'
+import Listing from '../Listing/Listing'
 
 const SidebarWrapper = styled.div`
   height: 100%;
@@ -32,6 +33,7 @@ export class Sidebar extends React.Component {
         <Heading>
           <h1>{this.props.title}</h1>
         </Heading>
+        <Listing places={this.props.places} />
       </SidebarWrapper>
     )
   }
