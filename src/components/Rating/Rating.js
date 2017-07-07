@@ -8,12 +8,13 @@ const RatingIcon = (props) => (<span>★</span>)
 const TopStars = styled.div`
   color: ${cssVars.colors.highlight};
   padding: 0;
-  position: aboslute;
+  position: absolute;
   z-index: 1;
   display: block;
   top: 0;
   left: 0;
   overflow: hidden;
+  width: ${props => props.percentage * 100}%;
 `
 
 const BottomStars = styled.div`
@@ -27,7 +28,6 @@ const StarsContainer = styled.div`
   unicode-bidi: bidi-override;
   color: ${cssVars.colors.dark};
   font-size: 25px;
-  width: 100px;
   margin: 0 auto;
   position: relative;
   padding: 0;
@@ -36,9 +36,10 @@ const StarsContainer = styled.div`
 
 export class Rating extends React.Component {
   render() {
+    const percentage = this.props.percentage || 0
     return (
       <StarsContainer>
-        <TopStars>
+        <TopStars percentage={percentage}>
           <RatingIcon />
           <RatingIcon />
           <RatingIcon />
@@ -54,9 +55,6 @@ export class Rating extends React.Component {
         </BottomStars>
       </StarsContainer>
     )
-  }
-}
-
   }
 }
 
