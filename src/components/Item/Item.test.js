@@ -1,7 +1,7 @@
 import React from 'react'
-import { shallow } from 'enzyme'
+import { shallow, mount } from 'enzyme'
 
-import Item from './Item'
+import { Item, ItemName } from './Item'
 
 describe('<Item />', () => {
   let wrapper
@@ -9,11 +9,14 @@ describe('<Item />', () => {
     name: 'San Francisco'
   }
   beforeEach(() => {
-    wrapper = shallow(<Item place={place} />)
+    wrapper = mount(<Item place={place} />)
   })
 
-  it('contains a title component with yelp', () => {
-    expect(wrapper.find('h1').first().text()).toEqual(place.name)
+  it('contains a title component', () => {
+    expect(wrapper.find(ItemName)).toHaveLength(1)
+  })
+  it('contains a title component with place name', () => {
+    expect(wrapper.find(ItemName).text()).toEqual(place.name)
   })
   it('contains a rating', () => {
     expect(wrapper.find('Rating')).toBeDefined()
