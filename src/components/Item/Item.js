@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-//import Rating from '../Rating/Rating'
+import Rating from '../Rating/Rating'
 
 const StyledItem = styled.div`
   display: flex;
@@ -27,7 +27,7 @@ export class Item extends React.Component {
     return (
       <StyledItem>
         <ItemName>{place.name}</ItemName>
-        <span>{place.rating/5}</span>
+        <Rating percentage={place.rating/5}/>
       </StyledItem>
     )
   }
