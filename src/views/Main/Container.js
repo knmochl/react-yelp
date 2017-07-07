@@ -64,13 +64,6 @@ export class Container extends React.Component {
             title={'Restaurants'}
             places={this.state.places}
             />
-
-          <Content>
-            {this.state.places.map(place => {
-              return (<div key={place.id}>{place.name}</div>)
-            })}
-          </Content>
-
         </MapWrapper>
       </div>
     )
