@@ -1,4 +1,5 @@
 import React from 'react'
+import { Route } from 'react-router-dom'
 import Map, { GoogleApiWrapper } from 'google-maps-react'
 import styled from 'styled-components'
 
@@ -6,6 +7,7 @@ import cssVars from '../../lib/css-constants'
 import { searchNearby } from '../../utils/googleApiHelpers'
 import Header from '../../components/Header/Header'
 import Sidebar from '../../components/Sidebar/Sidebar'
+import MapComponent from './Map/Map.js'
 
 const MapWrapper = styled(Map)`
   overflow-y: scroll;
@@ -64,6 +66,9 @@ export class Container extends React.Component {
             title={'Restaurants'}
             places={this.state.places}
             />
+          <Content>
+            <Route path="/map" component={MapComponent} />
+          </Content>
         </MapWrapper>
       </div>
     )
